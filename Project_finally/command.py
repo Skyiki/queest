@@ -11,8 +11,13 @@ try:
 except:
     players = {}
 
-with open('text_for_quest/text.json', 'r') as file:
-    text = json.load(file)
+text = {}
+try:
+   with open('text_for_quest/text.json', 'r') as file:
+        text = json.load(file)
+except FileNotFoundError:
+   print('File not found.')
+
 
 
 @bot.message_handler(commands=['start'])
