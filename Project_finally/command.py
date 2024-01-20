@@ -1,22 +1,19 @@
 import telebot
-from Project_finally.osnova import Osnova
+import Osnova
 import json
 from telebot import types
 
 bot = telebot.TeleBot(token=Osnova.token)
 
 try:
-    with open('osnova/player.json', 'r') as file:
+    with open('player.json', 'r') as file:
         players = json.load(file)
 except:
     players = {}
 
-text = {}
-try:
-   with open('text_for_quest/text.json', 'r') as file:
-        text = json.load(file)
-except FileNotFoundError:
-   print('File not found.')
+with open('text.json', 'r') as file:
+    text = json.load(file)
+
 
 
 
@@ -53,7 +50,7 @@ def callback_Inline(call):
         players[user_id]['location'] = 'start'
         players[user_id]['lvl'] = "1"
 
-        with open('osnova/player.json', 'w+') as file:
+        with open('player.json', 'w+') as file:
             json.dump(players, file)
 
         keyboard = types.InlineKeyboardMarkup()
@@ -75,7 +72,7 @@ def yes_func(call):
         players[user_id]['location'] = 'start'
         players[user_id]['lvl'] = "1"
 
-        with open('osnova/player.json', 'w+') as file:
+        with open('player.json', 'w+') as file:
             json.dump(players, file)
 
         keyboard = types.InlineKeyboardMarkup()
@@ -183,7 +180,7 @@ def no_func(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -211,7 +208,7 @@ def butonss1(call):
     players[user_id]['location'] = 'cat'
     players[user_id]['lvl'] = "2"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -233,7 +230,7 @@ def butt1(call):
     players[user_id]['location'] = 'cat1'
     players[user_id]['lvl'] = "3"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -253,7 +250,7 @@ def buut1(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == "buut2")# локация cat2, lvl 4
@@ -264,7 +261,7 @@ def buut2(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == "butt2")# локация cat2, lvl 3
@@ -275,7 +272,7 @@ def butt2(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == "butt3")# локация cat3, lvl 3
@@ -286,7 +283,7 @@ def butt3(call):
     players[user_id]['location'] = 'cat3'
     players[user_id]['lvl'] = "3"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -306,7 +303,7 @@ def buuut1(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 
@@ -319,7 +316,7 @@ def buuut2(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'butonss2')# локация tokyo, lvl 2
@@ -330,7 +327,7 @@ def butonss2(call):
     players[user_id]['location'] = 'tokyo'
     players[user_id]['lvl'] = "2"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -351,7 +348,7 @@ def buttt1(call):
     players[user_id]['location'] = 'tokyo1'
     players[user_id]['lvl'] = "3"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -373,7 +370,7 @@ def buton1(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'buton2')# локация tokyo2, lvl 4
@@ -385,7 +382,7 @@ def buton2(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'buton3')# локация tokyo3, lvl 4
@@ -396,7 +393,7 @@ def buton3(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'buttt2')# локация tokyo2, lvl 2
@@ -407,7 +404,7 @@ def buttt2(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'buttt3')# локация tokyo3, lvl 3
@@ -418,7 +415,7 @@ def buttt3(call):
     players[user_id]['location'] = 'tokyo3'
     players[user_id]['lvl'] = "3"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -439,7 +436,7 @@ def butot1(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'butot2')# локация tokyo2, lvl 5
@@ -450,7 +447,7 @@ def butot2(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'butot3')# локация tokyo3, lvl 5
@@ -461,7 +458,7 @@ def butot3(call):
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'butonss3')# локация 3 hero lvl 2
@@ -472,7 +469,7 @@ def butonss3(call):
     players[user_id]['location'] = '3 hero'
     players[user_id]['lvl'] = "2"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -491,7 +488,7 @@ def butttt1(call):# локация 3 hero1 lvl 3
     players[user_id]['location'] = '3 hero1'
     players[user_id]['lvl'] = "3"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
     keyboard = types.InlineKeyboardMarkup()
@@ -511,7 +508,7 @@ def buttons1(call):# локация 3 hero1 lvl 4
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 
@@ -524,7 +521,7 @@ def buttons2(call):# локация 3 hero2 lvl 4
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'buttons3')
@@ -536,7 +533,7 @@ def buttons3(call):# локация 3 hero3 lvl 4
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 
@@ -549,7 +546,7 @@ def handle_next_level_butttt2(call):  # локация 3 hero2 lvl 3
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
 
-    with open('osnova/player.json', 'w+') as file:
+    with open('player.json', 'w+') as file:
         json.dump(players, file)
 
 bot.polling()
