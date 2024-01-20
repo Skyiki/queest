@@ -478,7 +478,7 @@ def butonss3(call):
     keyboard.row(but1)
     keyboard.add(but2)
 
-    bot.send_photo(call.message.chat.id, open('photo/3_hero.png', 'rb'), caption= text['3hero lvl2'], reply_markup=keyboard)
+    bot.send_photo(call.message.chat.id, open('photo/3_hero.png', 'rb'), caption=text['3hero lvl2'], reply_markup=keyboard)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'butttt1')
 def butttt1(call):# локация 3 hero1 lvl 3
@@ -494,7 +494,7 @@ def butttt1(call):# локация 3 hero1 lvl 3
     keyboard = types.InlineKeyboardMarkup()
     but1 = types.InlineKeyboardButton("Пройти в крепость", callback_data='buttons1')
     but2 = types.InlineKeyboardButton('Остаться на опушке леса', callback_data='buttons2')
-    but3 = types.InlineKeyboardButton('Пойти дальше исследовать мир', callback_data='')
+    but3 = types.InlineKeyboardButton('Пойти дальше исследовать мир', callback_data='buttons3')
     keyboard.add(but1)
     keyboard.add(but2)
     keyboard.add(but3)
@@ -528,7 +528,7 @@ def buttons2(call):# локация 3 hero2 lvl 4
 def buttons3(call):# локация 3 hero3 lvl 4
     user_id = call.message.chat.id
 
-    bot.send_message(call.message.chat.id, text = text['3hero3 lvl4'])
+    bot.send_message(call.message.chat.id, text=text['3hero3 lvl4'])
 
     players[user_id]['location'] = 'start'
     players[user_id]['lvl'] = "1"
